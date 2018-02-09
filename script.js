@@ -1,4 +1,4 @@
-
+// Declare and initialize variables
 var numberOfShapes = 6;
 var colors = [];
 var correctColor;
@@ -10,12 +10,13 @@ var messageDisplay = document.querySelector("#messageArea");
 var newColorButton = document.querySelector("#newColors");
 var modeButtons = document.querySelectorAll(".mode");
 var modeToggle = document.getElementById("difficulty-mode");
-modeToggle.checked = true;
 
 
 init();
 
 function init() {
+  modeToggle.checked = true;
+  newColorButton.addEventListener("click", function() { reset(); });
 	setUpMode();
 	setUpShapes();
 	reset();
@@ -32,12 +33,12 @@ function setUpMode() {
 function setUpShapes() {
 	for (var i = 0; i < shapes.length; i++) {
 		shapes[i].addEventListener("click", function() {
-			var clickedColor = this.style.backgroundColor;
+			var selectedColor = this.style.backgroundColor;
 			this.classList.add("shadow-3d"); // To add shadow if was removed before
-			if (clickedColor === correctColor) {
+			if (selectedColor === correctColor) {
 				messageDisplay.textContent = "Correct";
 				newColorButton.textContent = "Play again?";
-				changeColors(clickedColor);
+				changeColors(selectedColor);
 			} else {
 				this.style.backgroundColor = "#E2E1E0";
 				this.classList.remove("shadow-3d"); // To remove shadow on the shapes removed
@@ -46,7 +47,6 @@ function setUpShapes() {
 		})
 	}
 }
-
 
 function reset() {
 	colors = generateRandomColors(numberOfShapes);
@@ -57,6 +57,8 @@ function reset() {
 	blueValue.textContent = rgb[2];
 	newColorButton.textContent = "New colors";
 	messageDisplay.textContent = "";
+
+  // Hide shapes if color is not assigned. Display them otherwise
 	for (i = 0; i < shapes.length; i++) {
 		if (colors[i]) {
 			shapes[i].style.display = "block";
@@ -79,11 +81,11 @@ function pickColor() {
 }
 
 function generateRandomColors(numberOfShapes) {
-  var array = [];
+  var colorsArray = [];
   for (var i = 0; i < numberOfShapes; i++) {
-    array.push(randomColor());
+    colorsArray.push(randomColor());
   }
-  return array;
+  return colorsArray;
 }
 
 function randomColor() {
@@ -93,10 +95,7 @@ function randomColor() {
 	return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
-newColorButton.addEventListener("click", function() {
-	reset();
-});
-
+// Return an array of RGB codes
 function splitRGB(rgbString) {
 	return rgb = correctColor.match(/\d+/g);
 }
