@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|PT+Serif:700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Guess the Color Game</title>
-</head>
-<body>
-	<header>
-		<h1><span class="header">Guess</span><span class="header">the</span><span class="header">Color</span></h1>
-	</header>
-	<main>
-		<div class="flex-container">
-			<div id="container-left">
-				<div id="colorDisplay" class="card">
-					<p class="info">Color Code</p>
-					<div id="red" class="text">R: <span id="red-value"></span></div>
-					<div id="green" class="text">G: <span id="green-value"></span></div>
-					<div id="blue" class="text">B: <span id="blue-value"></span></div>
-				</div>
-				<div id="messageArea" class="info"></div>
-				<div id="newColorsDiv"><button id="newColors">New colors</button></div>
-				<div id="mode-container">
-					<span class="mode-descr">Easy</span>
-					<label class="switch">
-						<input type="checkbox" id="difficulty-mode">
-						<span class="slider"></span>
-					</label>
-					<span class="mode-descr">Hard</span>
-				</div>
-			</div>
-			<div id="container-right">
-				<div class="shapes shadow-3d"></div>
-				<div class="shapes shadow-3d"></div>
-				<div class="shapes shadow-3d"></div>
-				<div class="shapes shadow-3d"></div>
-				<div class="shapes shadow-3d"></div>
-				<div class="shapes shadow-3d"></div>
-			</div>
-		</div>
-	</main>
-	<script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|PT+Serif:700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Guess the Color Game</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span class="header">Guess</span>
+        <span class="header">the</span>
+        <span class="header">Color</span>
+      </h1>
+    </header>
+    <main>
+      <div class="flex-container">
+        <div id="container-left">
+          <div id="color-display" class="card">
+            <p class="info">Color Code</p>
+            <div id="red" class="text">R: <span id="red-value"></span></div>
+            <div id="green" class="text">G: <span id="green-value"></span></div>
+            <div id="blue" class="text">B: <span id="blue-value"></span></div>
+          </div>
+          <div id="message-area" class="info"></div>
+          <div id="new-colors-div">
+            <button id="new-colors">New colors</button>
+          </div>
+          <div id="mode-container">
+            <span class="mode-label">Easy</span>
+            <label class="switch">
+              <input type="checkbox" id="difficulty-mode" />
+              <span class="slider"></span>
+            </label>
+            <span class="mode-label">Hard</span>
+          </div>
+        </div>
+        <div id="container-right">
+          <div class="shapes shadow-3d"></div>
+          <div class="shapes shadow-3d"></div>
+          <div class="shapes shadow-3d"></div>
+          <div class="shapes shadow-3d"></div>
+          <div class="shapes shadow-3d"></div>
+          <div class="shapes shadow-3d"></div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
